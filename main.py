@@ -5,7 +5,8 @@ import google.generativeai as genai
 import datetime
 
 # Apni API key yahan daalo
-genai.configure(api_key="")
+import os
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
 app = FastAPI()
 
