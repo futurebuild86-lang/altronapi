@@ -35,3 +35,4 @@ def chat(req: ChatRequest):
         f"Tu ALTRON hai - ek powerful Hindi AI assistant. Pyaar se jawab de. {req.message}"
     )
     return {"reply": response.text}
+from fastapi.responses import HTMLResponse
