@@ -20,7 +20,10 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
 class ChatRequest(BaseModel):
     message: str
-@app.get("/")
+@app.get("/app", response_class=HTMLResponse)
+def serve_app():
+    with open("altron.html", "r", encoding="utf-8") as f:
+        return f.read()
 def home():
     return {"status": "ALTRON API ONLINE!", "version": "2.0"}
 
